@@ -3,6 +3,7 @@ package advancedexams;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
 public class Cooking {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -11,6 +12,7 @@ public class Cooking {
                 Arrays.stream(scanner.nextLine().split("\\s+"))
                         .map(Integer::parseInt)
                         .collect(Collectors.toCollection(ArrayDeque::new));
+
 
         Stack<Integer> ingredients =
                 Arrays.stream(scanner.nextLine().split("\\s+"))
@@ -47,6 +49,7 @@ public class Cooking {
         }
 
         System.out.println("Liquids left: " + getElements(liquids));
+        Collections.reverse(ingredients);
         System.out.println("Ingredients left: " + getElements(ingredients));
 
         foodsCollected.forEach((k, v) -> System.out.printf("%s: %d%n", k, v));
